@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bài 10. Máy tính đơn giản</title>
+</head>
+<body>
+    <h2>Bài 10. Máy tính đơn giản</h2>
+    <label>Số thứ nhất: </label><input type="text" id="so1"><br><br>
+    <label>Số thứ hai: </label><input type="text" id="so2"><br><br>
+    
+    <button onclick="tinh('+')">+</button>
+    <button onclick="tinh('-')">-</button>
+    <button onclick="tinh('*')">*</button>
+    <button onclick="tinh('/')">/</button>
+    
+    <p id="kq"></p>
+
+    <script>
+        function tinh(phepToan) {
+            var a = parseFloat(document.getElementById("so1").value);
+            var b = parseFloat(document.getElementById("so2").value);
+            var ketQua = 0;
+
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("kq").innerHTML = "Vui lòng nhập đủ hai số!";
+                return;
+            }
+
+            if (phepToan === '+') ketQua = a + b;
+            else if (phepToan === '-') ketQua = a - b;
+            else if (phepToan === '*') ketQua = a * b;
+            else if (phepToan === '/') {
+                if (b === 0) {
+                    document.getElementById("kq").innerHTML = "Không thể chia cho 0!";
+                    return;
+                }
+                ketQua = a / b;
+            }
+
+            document.getElementById("kq").innerHTML = "Kết quả: " + ketQua;
+        }
+    </script>
+</body>
+</html>

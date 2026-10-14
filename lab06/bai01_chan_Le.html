@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kiểm tra số chẵn lẻ</title>
+</head>
+<body>
+
+    <h2>Bài 1. Kiểm tra số chẵn – số lẻ</h2>
+
+    <!-- Ô nhập số nguyên -->
+    <input type="text" id="so">
+
+    <!-- Nút Kiểm tra -->
+    <button onclick="kiemTra()">Kiểm tra</button>
+
+    <!-- Hiển thị kết quả -->
+    <p id="kq"></p>
+
+    <script>
+        function kiemTra() {
+            // Lấy giá trị từ ô input
+            var n = document.getElementById("so").value;
+
+            // Kiểm tra chẵn hay lẻ
+            if (n % 2 == 0) {
+                document.getElementById("kq").innerHTML = n + " là số chẵn";
+            } else {
+                document.getElementById("kq").innerHTML = n + " là số lẻ";
+            }
+        }
+    </script>
+
+</body>
+</html>

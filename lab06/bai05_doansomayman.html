@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bài 5. Đoán số may mắn</title>
+</head>
+<body>
+    <h2>Bài 5. Đoán số may mắn</h2>
+    <label>Nhập số (1-10): </label>
+    <input type="text" id="soDoan">
+    <button onclick="doanSo()">Đoán</button>
+    <p id="kq"></p>
+
+    <script>
+        function doanSo() {
+            var nguoiDoan = parseInt(document.getElementById("soDoan").value);
+            var mayChon = Math.floor(Math.random() * 10) + 1;
+
+            if (nguoiDoan === mayChon) {
+                document.getElementById("kq").innerHTML = "Chúc mừng! Bạn đã đoán trúng số " + mayChon;
+            } else {
+                document.getElementById("kq").innerHTML = "Chưa may mắn! Máy chọn số " + mayChon;
+            }
+        }
+    </script>
+</body>
+</html>

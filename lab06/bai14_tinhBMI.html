@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bài 14. Tính chỉ số BMI</title>
+</head>
+<body>
+    <h2>Bài 14. Tính chỉ số BMI</h2>
+    <label>Chiều cao (m): </label><input type="text" id="chieuCao"><br><br>
+    <label>Cân nặng (kg): </label><input type="text" id="canNang"><br><br>
+    <button onclick="tinhBMI()">Tính BMI</button>
+    <p id="kq"></p>
+
+    <script>
+        function tinhBMI() {
+            var chieuCao = parseFloat(document.getElementById("chieuCao").value);
+            var canNang = parseFloat(document.getElementById("canNang").value);
+
+            if (isNaN(chieuCao) || isNaN(canNang) || chieuCao <= 0 || canNang <= 0) {
+                document.getElementById("kq").innerHTML = "Vui lòng nhập chiều cao và cân nặng hợp lệ!";
+                return;
+            }
+
+            var bmi = canNang / (chieuCao * chieuCao);
+            var danhGia = "";
+
+            if (bmi < 18.5) {
+                danhGia = "Gầy";
+            } else if (bmi < 25) {
+                danhGia = "Bình thường";
+            } else if (bmi < 30) {
+                danhGia = "Thừa cân";
+            } else {
+                danhGia = "Béo phì";
+            }
+
+            document.getElementById("kq").innerHTML = "Chỉ số BMI của bạn là: <b>" + bmi.toFixed(2) + "</b> (" + danhGia + ")";
+        }
+    </script>
+</body>
+</html>

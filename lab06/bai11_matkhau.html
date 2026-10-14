@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bài 11. Kiểm tra mật khẩu</title>
+</head>
+<body>
+    <h2>Bài 11. Kiểm tra mật khẩu</h2>
+    <label>Nhập mật khẩu: </label>
+    <input type="password" id="mk">
+    <button onclick="kiemTraMK()">Kiểm tra</button>
+    <p id="kq"></p>
+
+    <script>
+        function kiemTraMK() {
+            var matKhau = document.getElementById("mk").value;
+            if (matKhau.length >= 8) {
+                document.getElementById("kq").innerHTML = "Mật khẩu hợp lệ ✅";
+            } else {
+                document.getElementById("kq").innerHTML = "Mật khẩu quá ngắn ❌ (Phải từ 8 ký tự trở lên)";
+            }
+        }
+    </script>
+</body>
+</html>

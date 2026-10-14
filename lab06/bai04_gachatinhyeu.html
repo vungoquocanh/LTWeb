@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Xem bói tình Yêu </h2>
+    <label for="tenban">Tên của Lốp:</label>
+    <input type="text" id="tenban">
+    <br><br>
+    <label for="tennguoi">Tên Cô Ấy:</label>
+    <input type="text" id="tennguoi">
+    <button onclick="xemboi()">Xem bói tình yêu</button>
+    <h3 id="ketqua"></h3>
+    <script>
+        function xemboi(){
+        let tenBan = document.getElementById("tenban").value;
+        let tenNguoi = document.getElementById("tennguoi").value;
+        let diem = Math.floor(Math.random() * 100) + 1;
+        if(diem>10){
+            document.getElementById("ketqua").textContent = tenBan + " 💕 " + tenNguoi + " có tỷ lệ hợp nhau là: " + diem + "%, Hình Như Cô Ấy Cũng Thích Mình!";
+        }else{
+            document.getElementById("ketqua").textContent = tenBan + " 💕 " + tenNguoi + " có tỷ lệ hợp nhau là: " + diem + "%, Lốp Thì Mãi Là Lốp!";
+        }
+    }
+    </script>
+</body>
+</html>

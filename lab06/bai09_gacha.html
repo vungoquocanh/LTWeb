@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bài 9. Quay thưởng may mắn</title>
+</head>
+<body>
+    <h2>Bài 9. Quay thưởng may mắn</h2>
+    <button onclick="quayThuong()">Quay thưởng</button>
+    <p id="kq"></p>
+
+    <script>
+        function quayThuong() {
+            var phanQua = ["100K VNĐ", "Một chiếc xe máy", "Một chuyến du lịch", "Chúc bạn may mắn lần sau", "1 cái kẹo", "Điện thoại iPhone"];
+            var qua = phanQua[Math.floor(Math.random() * phanQua.length)];
+            document.getElementById("kq").innerHTML = "Phần thưởng của bạn là: <b>" + qua + "</b>";
+        }
+    </script>
+</body>
+</html>
